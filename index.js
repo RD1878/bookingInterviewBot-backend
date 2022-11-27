@@ -15,10 +15,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-bot.on("polling_error", (err) => {
-    console.log(err)
-});
-
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
 
@@ -59,6 +55,7 @@ bot.on('message', async (msg) => {
 });
 
 app.post('/', async (req, res) => {
+    console.log(req)
     const {queryId, country, street, subject} = req.body;
     try {
         await bot.answerWebAppQuery(queryId, {
