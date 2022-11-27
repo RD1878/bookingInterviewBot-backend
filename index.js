@@ -15,8 +15,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-bot.on("polling_error", () => {
-    console.log(process.env.TELEGRAM_API_TOKEN)
+bot.on("polling_error", (err) => {
+    console.log(err)
 });
 
 bot.on('message', async (msg) => {
