@@ -15,7 +15,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-bot.on("polling_error", (err) => console.log(err));
+bot.on("polling_error", () => {
+    console.log(process.env)
+});
 
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
