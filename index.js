@@ -68,8 +68,7 @@ app.post('/', async (req, res) => {
         })
         return res.status(200).json({'success': 'success'});
     } catch (e) {
-        return e;
-        // return res.status(500).json({'error': 'error'})
+        return res.status(500).json({'error': e})
     }
 })
 
