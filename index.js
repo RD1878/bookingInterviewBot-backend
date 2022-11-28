@@ -66,9 +66,9 @@ app.post('/', async (req, res) => {
                 message_text: `Ваши данные ${queryId}, ${country}, ${street}, ${subject}`
             }
         })
-        return res.status(200).json({});
+        return res.status(200).json({'success': 'success'});
     } catch (e) {
-        return res.status(500).json({})
+        return res.status(500).json({'error': 'error'})
     }
 })
 
